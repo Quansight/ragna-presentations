@@ -1,0 +1,12 @@
+name: ragna-presentations
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - jupyterlab
+  - panel
+  - pip:
+    - jupyterlab-rise
+    # - ragna # TODO: Uncomment when we have public release available
