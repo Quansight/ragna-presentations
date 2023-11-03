@@ -3,10 +3,10 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.9
+  - python=3.11
   - pip
   - jupyterlab
   - panel
   - pip:
     - jupyterlab-rise
-    # - ragna # TODO: Uncomment when we have public release available
+    - ragna[builtin]

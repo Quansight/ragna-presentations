@@ -18,13 +18,6 @@ conda env create -f environment.yml
 conda activate ragna-presentations
 ```
 
-Since Ragna doesn't yet have a public release,
-you can install the `main` development branch with:
-
-```bash
-pip install "ragna @ git+https://github.com/Quansight/ragna@main"
-```
-
 ## Repository maintenance 🛠️
 
 After each presentation, create a git `tag` with the name `<conference_name-YYYY>` and add a link to the tag in the corresponding README section. You can also add a link to the video recording when it's available.
