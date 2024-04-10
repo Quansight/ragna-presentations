@@ -9,4 +9,4 @@ dependencies:
   - panel
   - pip:
     - jupyterlab-rise
-    - ragna[builtin]
+    - ragna[all]
