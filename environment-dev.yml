@@ -4,9 +4,15 @@ channels:
   - defaults
 dependencies:
   - python=3.11
+  - gxx
   - pip
   - jupyterlab
   - panel
+  - ipykernel
+  - iprogress
+  - ipywidgets
+  - jupyter
   - pip:
-    - jupyterlab-rise
     - ragna[all]
+    - exllamav2 @
+        https://github.com/turboderp/exllamav2/releases/download/v0.0.16/exllamav2-0.0.16+cu121-cp311-cp311-linux_x86_64.whl
