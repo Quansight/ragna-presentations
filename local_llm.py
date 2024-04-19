@@ -12,8 +12,8 @@ class Mistral7BInstruct(Assistant):
     @classmethod
     def requirements(cls):
         return [
-            PackageRequirement("exllamav2"),
             PackageRequirement("torch"),
+            PackageRequirement("exllamav2"),
         ]
 
     @classmethod
