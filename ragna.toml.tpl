@@ -13,7 +13,7 @@ assistants = [
     "ragna.assistants.RagnaDemoAssistant",
     "ragna.assistants.Gpt35Turbo16k",
     "ragna.assistants.Gpt4",
-    "local_llm.Mistral7BInstruct",
+    "local_llm.Llama38BInstruct",
 ]
 
 [api]
