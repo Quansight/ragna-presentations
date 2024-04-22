@@ -1,0 +1,26 @@
+name: ragna-presentations
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - gxx
+  - pip
+  - pip:
+      - python-dotenv
+      - ragna @ git+https://github.com/Quansight/ragna@pycon
+      - chromadb>=0.4.13
+      - httpx_sse
+      - ijson
+      - lancedb>=0.2
+      - pyarrow
+      - pymupdf>=1.23.6
+      - python-docx
+      - python-pptx
+      - tiktoken
+      - torch ==2.2.*
+      - exllamav2 @
+        https://github.com/turboderp/exllamav2/releases/download/v0.0.18/exllamav2-0.0.18+cu121-cp311-cp311-linux_x86_64.whl
+      - jupyterlab_nvdashboard
+  - ipykernel
+  - iprogress
+  - ipywidgets

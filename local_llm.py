@@ -3,11 +3,10 @@ from typing import Iterator
 
 from ragna.core import Assistant, PackageRequirement, Source
 
-
-class Mistral7BInstruct(Assistant):
+class Llama38BInstruct(Assistant):
     @classmethod
     def display_name(cls):
-        return "turboderp/Mistral-7B-v0.2-exl2"
+        return "turboderp/Llama-3-8B-Instruct-exl2"
 
     @classmethod
     def requirements(cls):
@@ -46,21 +45,21 @@ class Mistral7BInstruct(Assistant):
         cache = ExLlamaV2Cache(model, lazy=True)
         model.load_autosplit(cache)
         self.generator = ExLlamaV2StreamingGenerator(model, cache, self.tokenizer)
-        self.generator.set_stop_conditions({self.tokenizer.eos_token})
+        self.generator.set_stop_conditions({self.tokenizer.eos_token_id})
 
         self.settings = ExLlamaV2Sampler.Settings()
         self.settings.temperature = 0.0
 
-    def make_prompt(self, prompt: str, sources: list[Source]) -> str:
-        return "".join(
+    def _make_prompt(self, prompt: str, sources: list[Source]) -> str:
+        return "\n".join(
             [
-                f"<s>[INST] ",
-                f"You are a helpful assistant that answers prompts by only using the documents listed below. ",
-                f"Each individual document is started pattern <doc> and ended by </doc>. ",
-                f"If you can't answer a question based on the sources you are given, just say so. Do not make up information.",
-                *[f"<doc> {source.content} </doc>" for source in sources],
-                f"Reply with OK if you have understood these instructions.",
-                f" [/INST]OK</s>[INST] {prompt} [/INST]",
+                f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>",
+                f"",
+                f"Answer the question based only on the following context:",
+                *[source.content for source in sources],
+                f"<|eot_id|><|start_header_id|>user<|end_header_id|>",
+                f"",
+                f"{prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>",
             ]
         )
 
@@ -68,7 +67,7 @@ class Mistral7BInstruct(Assistant):
         self, prompt: str, sources: list[Source], *, max_new_tokens: int = 256
     ) -> Iterator[str]:
         input_ids = self.tokenizer.encode(
-            self.make_prompt(prompt, sources), add_bos=False
+            self._make_prompt(prompt, sources), add_bos=False
         )
 
         self.generator.begin_stream_ex(input_ids, self.settings)
