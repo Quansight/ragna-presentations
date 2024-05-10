@@ -2,10 +2,9 @@
 
 This repository contains material for Ragna-related presentations.
 
-## Build an AI Document Inquiry Chat with Offline LLMs 💬
+## (Current) From RAGs to riches: Build an AI document inquiry web-app 💬
 
-This tutorial is currently in active development.
-It will be presented at PyCon DE & PyData Berlin 2024.
+This tutorial will be presented at PyCon US 2024.
 
 ## Local setup 💻
 
@@ -21,11 +20,13 @@ conda activate ragna-presentations
 
 After each presentation, create a git `tag` with the name `<conference_name-YYYY>` and add a link to the tag in the corresponding README section. You can also add a link to the video recording when it's available.
 
-## Live presentations 🧑‍🏫
+## Previous live presentations 🧑‍🏫
 
-* [Upcoming] Build an AI Document Inquiry Chat with Offline LLMs at PyCon DE & PyData Berlin 2024
+* [Build an AI Document Inquiry Chat with Offline LLMs at PyCon DE & PyData Berlin 2024](https://github.com/Quansight/ragna-presentations/releases/tag/pycon-de-2024)
 * [From RAGs to riches: Build an AI document interrogation app in 30 mins, presented at PyData Global 2023](https://youtu.be/Fj5hADWf_ss?si=JMveT83SYu1_Q3Gf)
 * [From RAGs to riches: Build an AI document interrogation app in 30 mins, presented at PyData NYC 2023](https://github.com/Quansight/ragna-presentations/releases/tag/pydata-nyc-2023)
+
+Check the [git tags](https://github.com/Quansight/ragna-presentations/tags) for the material used in these presentations.
 
 ## Code of Conduct 📖
 
