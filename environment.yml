@@ -1,12 +1,15 @@
 name: ragna-presentations
 channels:
+  - nvidia
   - conda-forge
 dependencies:
   - python=3.11
+  - libcublas
   - gxx
   - pip
   - pip:
       - python-dotenv
+      - panel
       - ragna @ git+https://github.com/Quansight/ragna@pycon
       - chromadb>=0.4.13
       - httpx_sse
@@ -18,9 +21,13 @@ dependencies:
       - python-pptx
       - tiktoken
       - torch ==2.2.*
+      - openai
+      - llama-cpp-python @
+        https://github.com/abetlen/llama-cpp-python/releases/download/v0.2.72-cu121/llama_cpp_python-0.2.72-cp311-cp311-linux_x86_64.whl
       - exllamav2 @
         https://github.com/turboderp/exllamav2/releases/download/v0.0.18/exllamav2-0.0.18+cu121-cp311-cp311-linux_x86_64.whl
       - jupyterlab_nvdashboard
   - ipykernel
   - iprogress
   - ipywidgets
+variables: {}
