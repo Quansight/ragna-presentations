@@ -36,7 +36,7 @@ class Llama38BInstruct(Assistant):
         from exllamav2.generator import ExLlamaV2Sampler, ExLlamaV2StreamingGenerator
 
         config = ExLlamaV2Config()
-        config.model_dir = str(Path.home() / "shared/analyst/models" / self.display_name())
+        config.model_dir = str(Path.home() / "shared/pycon/models" / self.display_name())
         config.prepare()
 
         self.tokenizer = ExLlamaV2Tokenizer(config)
@@ -45,7 +45,7 @@ class Llama38BInstruct(Assistant):
         cache = ExLlamaV2Cache(model, lazy=True)
         model.load_autosplit(cache)
         self.generator = ExLlamaV2StreamingGenerator(model, cache, self.tokenizer)
-        self.generator.set_stop_conditions({self.tokenizer.eos_token_id})
+        self.generator.set_stop_conditions({self.tokenizer.eos_token_id, 78191})
 
         self.settings = ExLlamaV2Sampler.Settings()
         self.settings.temperature = 0.0
