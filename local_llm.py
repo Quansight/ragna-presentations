@@ -6,7 +6,7 @@ from ragna.core import Assistant, PackageRequirement, Source
 class Llama38BInstruct(Assistant):
     @classmethod
     def display_name(cls):
-        return "turboderp/Llama-3-8B-Instruct-exl2"
+        return "Llama-3-8B-Instruct-exl2"
 
     @classmethod
     def requirements(cls):
@@ -36,7 +36,7 @@ class Llama38BInstruct(Assistant):
         from exllamav2.generator import ExLlamaV2Sampler, ExLlamaV2StreamingGenerator
 
         config = ExLlamaV2Config()
-        config.model_dir = str(Path.home() / "shared/pycon/models" / self.display_name())
+        config.model_dir = str(Path.home() / "shared/scipy/rags-to-riches" / self.display_name())
         config.prepare()
 
         self.tokenizer = ExLlamaV2Tokenizer(config)
